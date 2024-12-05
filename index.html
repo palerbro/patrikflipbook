@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DearFlip Flipbook Viewer</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- DearFlip CSS -->
+    <link rel="stylesheet" href="dearflip/dflip/css/dflip.min.css">
+    <link rel="stylesheet" href="dearflip/dflip/css/themify-icons.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .flipbook-container {
+            width: 80%;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>DearFlip Flipbook Viewer</h1>
+    <div class="flipbook-container">
+        <!-- Flipbook Container -->
+        <div class="_df_book" source="bio.pdf"></div>
+    </div>
+
+    <!-- DearFlip JS -->
+    <script src="dearflip/dflip/js/dflip.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DearFlip initieras...");
+            const flipbook = document.querySelector("._df_book");
+
+            if (flipbook) {
+                console.log("Flipbook-elementet hittades:", flipbook);
+                console.log("Laddar PDF-fil från:", flipbook.getAttribute("source"));
+            } else {
+                console.error("Flipbook-elementet hittades inte.");
+            }
+        });
+    </script>
+</body>
+</html>
